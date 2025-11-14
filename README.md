@@ -88,9 +88,9 @@ pnpm dev
 
 ## Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| NEST_API_KEY | Yes | Your OWASP Nest API key for authentication |
+| Variable     | Required | Description                                |
+| ------------ | -------- | ------------------------------------------ |
+| NEST_API_KEY | Yes      | Your OWASP Nest API key for authentication |
 
 ## Deployment
 
