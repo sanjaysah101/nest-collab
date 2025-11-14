@@ -7,7 +7,12 @@
     "source.fixAll.eslint": "always"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -18,11 +23,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": [
-    "ansomobile",
-    "Ansopedian",
-    "ansospace",
+    "Collab",
     "hookform",
-    "polyrepo",
     "Sonner",
     "tanstack",
     "trivago",

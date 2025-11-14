@@ -116,6 +116,9 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      owasp-nest:
+        specifier: ^0.3.0
+        version: 0.3.0
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -2553,6 +2556,9 @@ packages:
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
+
+  owasp-nest@0.3.0:
+    resolution: {integrity: sha512-4w70XHqmayBtgsH3WMFNDfFvwEBobti+P830c9c5naHiPFcbEmHprjPAePREUrNz0iBuZytJ0rzM5vimblCXsQ==}
 
   own-keys@1.0.1:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
@@ -5595,6 +5601,10 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
       word-wrap: 1.2.5
+
+  owasp-nest@0.3.0:
+    dependencies:
+      zod: 4.1.12
 
   own-keys@1.0.1:
     dependencies:
