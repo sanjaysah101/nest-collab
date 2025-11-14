@@ -11,16 +11,13 @@ export async function GET(request: Request) {
     const offset = searchParams.get("offset") || "0";
 
     const result = await nest.community.listOrganizations({
-      limit: parseInt(limit),
-      offset: parseInt(offset),
+      pageSize: parseInt(limit),
+      page: Math.floor(parseInt(offset) / parseInt(limit)) + 1,
     });
 
     return Response.json(result);
   } catch (error) {
     console.error("Error fetching organizations:", error);
-    return Response.json(
-      { error: "Failed to fetch organizations" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to fetch organizations" }, { status: 500 });
   }
 }

@@ -46,6 +46,9 @@ export default function Navigation() {
             <Link href="/events" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
               Events
             </Link>
+            <Link href="/sponsors" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Sponsors
+            </Link>
             <Button asChild variant="outline" size="sm">
               <Link href="/projects">Get Started</Link>
             </Button>

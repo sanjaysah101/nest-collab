@@ -38,16 +38,14 @@ export default function SponsorsBrowser() {
     queryKey: ["sponsors", currentPage, selectedType],
     queryFn: () =>
       fetch(
-        `/api/sponsors?page=${currentPage}&page_size=20${selectedType ? `&sponsor_type=${selectedType}` : ""}`,
+        `/api/sponsors?page=${currentPage}&page_size=20${selectedType ? `&sponsor_type=${selectedType}` : ""}`
       ).then((r) => r.json()),
   });
 
   const sponsors: Sponsor[] = (data as PagedSponsor | undefined)?.items || [];
   const totalPages = (data as PagedSponsor | undefined)?.total_pages ?? 1;
 
-  const allTypes = sponsors.length > 0 
-    ? Array.from(new Set(sponsors.map((s) => s.sponsor_type))) 
-    : [];
+  const allTypes = sponsors.length > 0 ? Array.from(new Set(sponsors.map((s) => s.sponsor_type))) : [];
 
   // Filter sponsors
   const filteredSponsors = sponsors.filter((sponsor) => {
@@ -62,7 +60,7 @@ export default function SponsorsBrowser() {
         <div className="mb-12">
           <h1 className="text-foreground mb-4 text-3xl font-bold md:text-4xl">OWASP Sponsors</h1>
           <p className="text-muted-foreground max-w-2xl text-lg">
-            Meet the organizations supporting OWASP's mission to improve software security.
+            Meet the organizations supporting OWASP&apos;s mission to improve software security.
           </p>
         </div>
 
@@ -142,11 +140,7 @@ export default function SponsorsBrowser() {
                 className="hover:border-primary/50 group flex flex-col p-6 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="mb-4 flex items-center justify-center">
-                  <img
-                    src={sponsor.image_url}
-                    alt={sponsor.name}
-                    className="h-24 w-auto object-contain"
-                  />
+                  <img src={sponsor.image_url} alt={sponsor.name} className="h-24 w-auto object-contain" />
                 </div>
                 <div className="text-center">
                   <h3 className="text-foreground group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
@@ -162,12 +156,7 @@ export default function SponsorsBrowser() {
 
                 {/* Metadata and Button */}
                 <div className="border-border mt-auto flex items-center justify-center border-t pt-4">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    asChild
-                    className="hover:text-primary"
-                  >
+                  <Button variant="ghost" size="sm" asChild className="hover:text-primary">
                     <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Visit Website
