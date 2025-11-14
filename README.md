@@ -113,6 +113,15 @@ Find issues to contribute to
 - Good first issues highlighted
 - Direct GitHub integration
 
+#### 📚 Resource Library
+
+Curated OWASP resources and tools
+
+- Security tools directory (ZAP, Dependency-Check, etc.)
+- Learning resources (WebGoat, Juice Shop)
+- Best practices and guides
+- Documentation and cheat sheets
+
 #### 🏆 Sponsors Showcase
 
 Recognize OWASP supporters
@@ -350,6 +359,8 @@ For issues, questions, or feedback:
 - [x] Repositories explorer with GitHub stats
 - [x] Issues tracker for contributions
 - [x] Sponsors showcase
+- [x] **Resource library with curated OWASP tools and guides**
+- [x] **Enhanced UI with animations and real-time stats**
 - [x] Responsive mobile-first design
 - [x] Real-time API integration
 - [x] Advanced filtering and pagination

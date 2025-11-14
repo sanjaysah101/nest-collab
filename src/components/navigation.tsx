@@ -27,24 +27,24 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-5 md:flex">
             <Link href="/projects" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
               Projects
             </Link>
             <Link href="/members" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
               Members
             </Link>
-            <Link href="/chapters" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
-              Chapters
-            </Link>
-            <Link href="/events" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
-              Events
-            </Link>
-            <Link href="/repositories" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
-              Repositories
+            <Link
+              href="/resources"
+              className="text-foreground hover:text-primary text-sm font-medium transition-colors"
+            >
+              Resources
             </Link>
             <Link href="/issues" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
               Issues
+            </Link>
+            <Link href="/events" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Events
             </Link>
             <Button asChild variant="outline" size="sm">
               <Link href="/projects">Get Started</Link>
@@ -53,12 +53,12 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="hover:bg-secondary rounded-lg p-2 transition-colors md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="md:hidden">
+            <button className="hover:bg-secondary rounded-lg p-2 transition-colors" onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -77,10 +77,16 @@ export default function Navigation() {
               Members
             </Link>
             <Link
-              href="/chapters"
+              href="/resources"
               className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
             >
-              Chapters
+              Resources
+            </Link>
+            <Link
+              href="/issues"
+              className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Issues
             </Link>
             <Link
               href="/events"
@@ -89,16 +95,22 @@ export default function Navigation() {
               Events
             </Link>
             <Link
+              href="/chapters"
+              className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Chapters
+            </Link>
+            <Link
               href="/repositories"
               className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
             >
               Repositories
             </Link>
             <Link
-              href="/issues"
+              href="/sponsors"
               className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
             >
-              Issues
+              Sponsors
             </Link>
           </div>
         )}
