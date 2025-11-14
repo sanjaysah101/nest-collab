@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,9 +19,13 @@ export default function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2">
-            <div className="from-primary to-primary/70 flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br">
-              <span className="text-primary-foreground text-sm font-bold">NC</span>
-            </div>
+            <Image
+              src="/favicon_io/nest-collab-logo.jpg"
+              alt="NestCollab Logo"
+              className="h-8 w-8 rounded-lg object-cover"
+              width={32}
+              height={32}
+            />
             <span className="text-foreground group-hover:text-primary text-lg font-bold transition-colors">
               NestCollab
             </span>

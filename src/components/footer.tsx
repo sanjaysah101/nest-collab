@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Github, Heart, Trophy } from "lucide-react";
@@ -10,9 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="mb-4 flex items-center gap-2">
-              <div className="from-primary to-primary/70 flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br">
-                <span className="text-primary-foreground text-sm font-bold">NC</span>
-              </div>
+              <Image
+                src="/favicon_io/nest-collab-logo.jpg"
+                alt="NestCollab Logo"
+                className="h-8 w-8 rounded-lg object-cover"
+                width={32}
+                height={32}
+              />
               <span className="text-foreground font-bold">NestCollab</span>
             </Link>
             <p className="text-muted-foreground mb-4 text-sm">

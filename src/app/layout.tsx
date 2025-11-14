@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   title: "NestCollab - Security Collaboration Platform",
   description:
     "Connect with security researchers and developers. Discover OWASP projects, find contributors, and collaborate on security initiatives.",
+  icons: {
+    icon: "/favicon_io/favicon.ico",
+    shortcut: "/favicon_io/favicon.ico",
+    apple: "/favicon_io/apple-touch-icon.png",
+  },
+  manifest: "/favicon_io/site.webmanifest",
 };
 
 export default function RootLayout({
