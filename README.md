@@ -57,12 +57,6 @@ NestCollab transforms the OWASP Nest API into an interactive collaboration hub, 
 - **Icons**: Lucide React
 - **Deployment**: Vercel
 
-## 🎥 Demo & Screenshots
-
-### Live Demo
-
-🌐 **[View Live Demo](https://nest-collab.vercel.app)** _(Add your deployed URL)_
-
 ### Key Features Showcase
 
 #### 📊 Projects Discovery
