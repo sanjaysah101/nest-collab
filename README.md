@@ -4,19 +4,24 @@ NestCollab is a modern web platform that connects security researchers, develope
 
 ## Features
 
-- **Project Discovery** - Browse and search 1000+ OWASP security projects with advanced filtering
-- **Contributors Directory** - Find security experts by role, expertise, and contributions
-- **Community Forum** - Engage in real-time discussions organized by topics
-- **Advanced Search** - Powerful search with multi-tag filtering and sorting options
+- **Project Discovery** - Browse and search OWASP security projects with advanced filtering by level
+- **Members Directory** - Connect with OWASP community members, view profiles, companies, and locations
+- **Chapters Browser** - Discover OWASP chapters worldwide, filter by country and region
+- **Events Calendar** - Find upcoming and past OWASP events, conferences, and meetups
+- **Repository Explorer** - Browse OWASP repositories with stats (stars, forks, contributors, issues)
+- **Issues Tracker** - Find open issues to contribute to across OWASP projects
+- **Sponsors Showcase** - View organizations supporting OWASP's mission
 - **Real-time Data** - Live integration with OWASP Nest API for up-to-date content
 - **Responsive Design** - Mobile-first design that works seamlessly on all devices
+- **Advanced Filtering** - Multi-criteria filtering and search across all resources
 
 ## Tech Stack
 
 - **Frontend**: Next.js 16, React 19, TypeScript
 - **Styling**: Tailwind CSS v4, shadcn/ui components
-- **Data Fetching**: SWR for client-side caching and synchronization
+- **Data Fetching**: TanStack Query (React Query) for client-side caching and synchronization
 - **API Integration**: OWASP Nest TypeScript SDK
+- **Icons**: Lucide React
 - **Deployment**: Vercel
 
 ## Getting Started
@@ -39,7 +44,7 @@ cd nest-collab
 2. Install dependencies
 
 ```bash
-pnpm add
+pnpm install
 ```
 
 3. Set up environment variables in the Vars section:
@@ -62,29 +67,50 @@ pnpm dev
 
 1. Navigate to the Projects page from the header
 2. Use the search bar to find specific projects
-3. Filter by topics and expertise areas
-4. Click on a project card to view details
+3. Filter by project level (Flagship, Production, Lab, Incubator, Other)
+4. View project details including creation and update dates
 
-### Find Contributors
+### Explore Members
 
-1. Go to the Contributors Directory
-2. Search by name, role, or expertise
-3. View contributor profiles and statistics
-4. Connect and collaborate
+1. Go to the Members page
+2. Search by name, username, company, or location
+3. View member profiles with avatars and bio
+4. Click "View Profile" to visit their GitHub profile
 
-### Participate in Discussions
+### Discover Chapters
 
-1. Visit the Discussion Forum
-2. Browse conversations by category
-3. Start new discussions
-4. Engage with the community
+1. Visit the Chapters page
+2. Filter by country to find local chapters
+3. Search for specific chapter names
+4. View chapter details including region and country
 
-### Advanced Search
+### Find Events
 
-1. Go to the Search page
-2. Use multiple filters (topics, types, expertise)
-3. Sort by relevance, popularity, or recency
-4. Explore results
+1. Navigate to the Events page
+2. Toggle between upcoming and all events
+3. Search for specific events
+4. Click "Details" to visit event pages
+
+### Browse Repositories
+
+1. Go to the Repositories page
+2. Search by repository name or description
+3. View repository statistics (stars, forks, contributors)
+4. See open issues count for each repository
+
+### Contribute to Issues
+
+1. Visit the Issues page
+2. Filter by state (open/closed)
+3. Search for specific issues
+4. Click the external link icon to view and contribute on GitHub
+
+### View Sponsors
+
+1. Navigate to the Sponsors page
+2. Filter by sponsor type (Platinum, Gold, Silver, etc.)
+3. Search for specific sponsors
+4. Visit sponsor websites to learn more
 
 ## Environment Variables
 
@@ -126,17 +152,39 @@ pnpm lint
 
 ## API Integration
 
-NestCollab uses the OWASP Nest TypeScript SDK to fetch data. The integration is configured in `lib/nest-client.ts`:
+NestCollab integrates with the OWASP Nest API through custom API routes. The integration is configured in `lib/nest-client.ts`:
 
 ```typescript
 import { Nest } from "owasp-nest";
 
-const nestClient = new Nest({
+export const nestClient = new Nest({
   apiKey: process.env.NEST_API_KEY ?? "",
 });
+
+export function getNestHeaders() {
+  return {
+    "X-API-Key": process.env.NEST_API_KEY ?? "",
+    "Content-Type": "application/json",
+  };
+}
+
+export function nestApiUrl(path: string) {
+  return `https://nest.owasp.dev/api/v0${path}`;
+}
 ```
 
-All API routes use the client to fetch and transform data before sending to the frontend.
+### Available API Endpoints
+
+- `/api/projects` - List and filter OWASP projects
+- `/api/community/members` - Browse community members
+- `/api/chapters` - Discover OWASP chapters
+- `/api/events` - Find OWASP events
+- `/api/repositories` - Explore repositories
+- `/api/issues` - Browse GitHub issues
+- `/api/releases` - View project releases
+- `/api/sponsors` - List OWASP sponsors
+
+All API routes support pagination, filtering, and sorting parameters.
 
 ## Contributing
 
@@ -150,10 +198,11 @@ We welcome contributions! Please follow these steps:
 
 ## Performance & Optimization
 
-- **SWR Caching**: Client-side data caching reduces API calls
-- **Debounced Search**: Search queries are debounced to minimize API requests
-- **Image Optimization**: Next.js Image component for optimized loading
+- **TanStack Query Caching**: Client-side data caching reduces API calls and improves performance
+- **Optimized Search**: Search functionality with real-time filtering
+- **Image Optimization**: Optimized avatar and sponsor logo loading
 - **Code Splitting**: Route-based code splitting for faster initial load
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
 
 ## Security
 
@@ -195,12 +244,35 @@ For issues, questions, or feedback:
 
 ## Roadmap
 
-- Real-time notifications for project updates
-- User authentication and profiles
-- Project recommendation engine
-- Team collaboration features
-- Advanced analytics dashboard
-- Mobile app
+### ✅ Completed
+
+- [x] Projects browser with filtering and search
+- [x] Members directory with profiles
+- [x] Chapters discovery by country
+- [x] Events calendar (upcoming and past)
+- [x] Repositories explorer with GitHub stats
+- [x] Issues tracker for contributions
+- [x] Sponsors showcase
+- [x] Responsive mobile-first design
+- [x] Real-time API integration
+- [x] Advanced filtering and pagination
+
+### 🚧 In Progress
+
+- [ ] Individual detail pages for projects, members, chapters, events
+- [ ] Enhanced search across all resources
+
+### 📋 Planned
+
+- [ ] User authentication and personalized profiles
+- [ ] Bookmark and favorite functionality
+- [ ] Advanced analytics dashboard
+- [ ] Project recommendation engine based on interests
+- [ ] Team collaboration features
+- [ ] Real-time notifications for project updates
+- [ ] Mobile app
+- [ ] Integration with additional OWASP resources
+- [ ] Community discussion forums
 
 ## Acknowledgments
 

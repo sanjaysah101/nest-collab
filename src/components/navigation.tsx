@@ -27,21 +27,24 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 md:flex">
             <Link href="/projects" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
               Projects
             </Link>
-            <Link
-              href="/contributors"
-              className="text-foreground hover:text-primary text-sm font-medium transition-colors"
-            >
-              Contributors
+            <Link href="/members" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Members
             </Link>
-            <Link
-              href="/discussions"
-              className="text-foreground hover:text-primary text-sm font-medium transition-colors"
-            >
-              Discussions
+            <Link href="/chapters" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Chapters
+            </Link>
+            <Link href="/events" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Events
+            </Link>
+            <Link href="/repositories" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Repositories
+            </Link>
+            <Link href="/issues" className="text-foreground hover:text-primary text-sm font-medium transition-colors">
+              Issues
             </Link>
             <Button asChild variant="outline" size="sm">
               <Link href="/projects">Get Started</Link>
@@ -68,16 +71,34 @@ export default function Navigation() {
               Projects
             </Link>
             <Link
-              href="/contributors"
+              href="/members"
               className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
             >
-              Contributors
+              Members
             </Link>
             <Link
-              href="/discussions"
+              href="/chapters"
               className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
             >
-              Discussions
+              Chapters
+            </Link>
+            <Link
+              href="/events"
+              className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Events
+            </Link>
+            <Link
+              href="/repositories"
+              className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Repositories
+            </Link>
+            <Link
+              href="/issues"
+              className="text-foreground hover:bg-secondary block rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+            >
+              Issues
             </Link>
           </div>
         )}
